@@ -209,7 +209,8 @@ public class PushRegistrationFragment extends Fragment {
                     if (mGcm == null) {
                         mGcm = GoogleCloudMessaging.getInstance(mApplicationContext);
                     }
-                    mRegId = mGcm.register(Config.SENDER_ID);
+                    // remark exception for depressed method mark 20181011
+                    //mRegId = mGcm.register(Config.SENDER_ID);
                     // AppiariesサーバにRegistration IDを登録
                     sendRegistrationIdToBackend();
                     // Registration IDを登録

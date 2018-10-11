@@ -37,14 +37,15 @@ public class SplashActivity extends AppCompatActivity implements PushRegistratio
         setContentView(R.layout.activity_splash);
 
         mIsSplashEnd = false;
-        mIsGcmRegistered = false;
+        // disable GCM mark 20181011 begin
+        mIsGcmRegistered = true;
 
         // GCMの処理開始
-        if (savedInstanceState == null) {
-            final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.add(new PushRegistrationFragment(), "registration").commit();
-        }
-
+//        if (savedInstanceState == null) {
+//            final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//            ft.add(new PushRegistrationFragment(), "registration").commit();
+//        }
+        // disable GCM mark 20181011 end
         mTimer = new CountDownTimer(Config.SPLASH_TIME_MILLIS, Config.SPLASH_TIME_MILLIS) {
             @Override
             public void onTick(long millisUntilFinished) {
